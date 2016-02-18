@@ -1,0 +1,12 @@
+For if_nametoindex
+
+--- origsrc/zeromq-4.1.4/src/windows.hpp	2015-11-04 02:55:13.000000000 -0600
++++ src/zeromq-4.1.4/src/windows.hpp	2016-02-17 20:19:13.631883900 -0600
+@@ -70,6 +70,7 @@ struct tcp_keepalive {
+ #define SIO_KEEPALIVE_VALS _WSAIOW(IOC_VENDOR,4)
+ #endif
+ 
++#include <netioapi.h>
+ #include <ws2tcpip.h>
+ #include <ipexport.h>
+ #if !defined _WIN32_WCE

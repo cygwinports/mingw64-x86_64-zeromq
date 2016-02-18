@@ -1,0 +1,23 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-zeromq"
+VERSION=4.1.4
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Lightweight messaging library for Win64 toolchain"
+DESCRIPTION="The 0MQ lightweight messaging kernel is a library which extends
+the standard socket interfaces with features traditionally provided by
+specialised messaging middleware products. 0MQ sockets provide an
+abstraction of asynchronous message queues, multiple messaging patterns,
+message filtering (subscriptions), seamless access to multiple transport
+protocols and more."
+HOMEPAGE="http://www.zeromq.org/"
+SRC_URI="http://download.zeromq.org/zeromq-${VERSION}.tar.gz"
+SRC_DIR="zeromq-${VERSION}"
+PATCH_URI="4.1.4-mingw-w64.patch"
+
+export LIBZMQ_EXTRA_LDFLAGS="-no-undefined"
+CPPFLAGS+=" -DFD_SETSIZE=1024"
+CYGCONF_ARGS="--with-poller=select --with-libsodium"
+MAKEOPTS+=" bin_PROGRAMS= man_MANS= "
