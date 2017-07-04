@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-zeromq"
-VERSION=4.1.4
+VERSION=4.1.6
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Lightweight messaging library for Win64 toolchain"
@@ -13,7 +13,8 @@ abstraction of asynchronous message queues, multiple messaging patterns,
 message filtering (subscriptions), seamless access to multiple transport
 protocols and more."
 HOMEPAGE="http://www.zeromq.org/"
-SRC_URI="http://download.zeromq.org/zeromq-${VERSION}.tar.gz"
+#SRC_URI="https://github.com/zeromq/libzmq/releases/download/v${VERSION}/zeromq-${VERSION}.tar.gz"
+SRC_URI="https://github.com/zeromq/zeromq4-1/releases/download/v${VERSION}/zeromq-${VERSION}.tar.gz"
 SRC_DIR="zeromq-${VERSION}"
 PATCH_URI="4.1.4-mingw-w64.patch"
 
